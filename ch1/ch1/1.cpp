@@ -19,8 +19,20 @@ bool foo() {
     return true;
 }
 
+bool foo2() {
+    char* input = new char[MAX];
+    cin >> input;
+    int length = (unsigned)strlen(input);
+    sort(input, input+length);
+    for(int i=0;i<length-1;i++) {
+        if(input[i] == input[i+1])
+            return false;
+    }
+    return true;
+}
+
 int main(int argc, const char * argv[]) {
-    bool result = foo();
+    bool result = foo2();
     cout << "result: " << (result ? "true" : "false") << endl;
     return 0;
 }
