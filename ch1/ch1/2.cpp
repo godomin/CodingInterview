@@ -6,7 +6,7 @@ using namespace std;
 bool foo() {
     char input1[MAX];
     char input2[MAX];
-    int count[26] = {0};
+    int count[26] = {0};    // have to check character set
     cin >> input1;
     cin >> input2;
     int length1 = (unsigned)strlen(input1);
@@ -35,11 +35,7 @@ bool foo2() {
         return false;
     sort(input1, input1+length1);
     sort(input2, input2+length2);
-    for(int i=0;i<length1;i++) {
-        if(input1[i] != input2[i])
-            return false;
-    }
-    return true;
+    return strcmp(input1, input2);
 }
 
 int main() {
