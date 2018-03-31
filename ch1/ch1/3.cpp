@@ -24,6 +24,32 @@ char* foo() {
     return output;
 }
 
+// answer: count space in advance and replace string from the end
+void foo2() {
+    char input[MAX];
+    int length;
+    int spaceCnt = 0;
+    cin.getline(input, MAX);
+    cin >> length;
+    for(int i=0;i<length;i++)
+        if(input[i] == ' ')
+            spaceCnt++;
+    int index = length + spaceCnt * 2;
+    if(length < strlen(input))
+        input[length] = '\0';
+    for(int i=length-1; i>=0; i--) {
+        if(input[i] == ' ') {
+            input[index - 1] = '0';
+            input[index - 2] = '2';
+            input[index - 3] = '%';
+            index -= 3;
+        } else {
+            input[index - 1] = input[i];
+            index--;
+        }
+    }
+}
+
 int main() {
     char* result = foo();
     cout << "result: " << result << endl;
