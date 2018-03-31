@@ -1,5 +1,6 @@
-#if 0
+#if 1
 #include <iostream>
+#include <algorithm>
 #define MAX 100
 using namespace std;
 bool foo() {
@@ -22,8 +23,27 @@ bool foo() {
     return true;
 }
 
+// O(NlogN)
+bool foo2() {
+    char input1[MAX];
+    char input2[MAX];
+    cin >> input1;
+    cin >> input2;
+    int length1 = (unsigned)strlen(input1);
+    int length2 = (unsigned)strlen(input2);
+    if(length1 != length2)
+        return false;
+    sort(input1, input1+length1);
+    sort(input2, input2+length2);
+    for(int i=0;i<length1;i++) {
+        if(input1[i] != input2[i])
+            return false;
+    }
+    return true;
+}
+
 int main() {
-    bool result = foo();
+    bool result = foo2();
     cout << "result: " << (result ? "true" : "false") << endl;
     return 0;
 }
