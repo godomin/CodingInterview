@@ -22,6 +22,26 @@ int** makeZero(int** input, int M, int N) {
     return input;
 }
 
+// use input as zero checking space
+int** makeZero2(int** input, int M, int N) {
+    for(int i=0;i<M;i++) {
+        for(int j=0;j<N;j++) {
+            if(input[i][j] == 0) {
+                input[i][0] = 0;
+                input[0][j] = 0;
+            }
+        }
+    }
+    for(int i=0;i<M;i++) {
+        for(int j=0;j<N;j++) {
+            if(input[i][0] == 0 || input[0][j] == 0) {
+                input[i][j] = 0;
+            }
+        }
+    }
+    return input;
+}
+
 int main() {
     int m, n;
     cin >> m >> n;
