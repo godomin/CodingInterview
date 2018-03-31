@@ -1,4 +1,4 @@
-#if 1
+#if 0
 #include <iostream>
 #include <string>
 using namespace std;
@@ -18,7 +18,7 @@ bool isRotate(string s1, string s2) {
     return false;
 }
 
-// hint?
+// hint? => answer
 bool isRotate2(string s1, string s2) {
     if(s1.length() != s2.length())
         return false;

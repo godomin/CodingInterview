@@ -24,21 +24,41 @@ int** makeZero(int** input, int M, int N) {
 
 // use input as zero checking space
 int** makeZero2(int** input, int M, int N) {
-    for(int i=0;i<M;i++) {
-        for(int j=0;j<N;j++) {
+    // have to check first row/column
+    bool rowZero = false;
+    bool columnZero = false;
+    
+    for(int i=0;i<M;i++)
+        if(input[i][0] == 0)
+            rowZero = true;
+    for(int j=0;j<N;j++)
+        if(input[j][0] == 0)
+            columnZero = true;
+    
+    for(int i=1;i<M;i++) {
+        for(int j=1;j<N;j++) {
             if(input[i][j] == 0) {
                 input[i][0] = 0;
                 input[0][j] = 0;
             }
         }
     }
-    for(int i=0;i<M;i++) {
-        for(int j=0;j<N;j++) {
+    
+    for(int i=1;i<M;i++) {
+        for(int j=1;j<N;j++) {
             if(input[i][0] == 0 || input[0][j] == 0) {
                 input[i][j] = 0;
             }
         }
     }
+    
+    if(rowZero)
+        for(int i=0;i<M;i++)
+            input[i][0] = 0;
+    if(columnZero)
+        for(int j=0;j<N;j++)
+            input[0][j] = 0;
+    
     return input;
 }
 

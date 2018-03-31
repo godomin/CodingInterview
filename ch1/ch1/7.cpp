@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 #define MAX 100
+// this is the answer
 int** foo(int** input, int n) {
     int layer = n/2;
     for(int i=0;i<=layer;i++) {
