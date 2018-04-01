@@ -1,4 +1,3 @@
-#if 1
 #include <iostream>
 #include <algorithm>
 #define MAX 100
@@ -43,4 +42,3 @@ int main() {
     cout << "result: " << (result ? "true" : "false") << endl;
     return 0;
 }
-#endif

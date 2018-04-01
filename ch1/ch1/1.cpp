@@ -1,4 +1,3 @@
-#if 1
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -69,4 +68,3 @@ int main(int argc, const char * argv[]) {
     cout << "result: " << (result ? "true" : "false") << endl;
     return 0;
 }
-#endif

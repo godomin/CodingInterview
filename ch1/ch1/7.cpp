@@ -1,4 +1,3 @@
-#if 0
 #include <iostream>
 using namespace std;
 #define MAX 100
@@ -39,4 +38,3 @@ int main() {
     
     return 0;
 }
-#endif

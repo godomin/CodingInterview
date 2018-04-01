@@ -1,4 +1,3 @@
-#if 0
 #include <iostream>
 using namespace std;
 int** makeZero(int** input, int M, int N) {
@@ -83,4 +82,3 @@ int main() {
     }
     return 0;
 }
-#endif

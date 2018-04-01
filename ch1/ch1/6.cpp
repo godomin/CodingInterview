@@ -1,4 +1,3 @@
-#if 1
 #include <iostream>
 #define MAX 100
 using namespace std;
@@ -52,4 +51,3 @@ int main() {
     cout << out << endl;
     return 0;
 }
-#endif

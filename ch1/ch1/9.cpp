@@ -1,4 +1,3 @@
-#if 0
 #include <iostream>
 #include <string>
 using namespace std;
@@ -28,4 +27,3 @@ bool isRotate2(string s1, string s2) {
 int main() {
     return 0;
 }
-#endif
