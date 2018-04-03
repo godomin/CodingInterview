@@ -13,7 +13,7 @@ char* foo(char* input) {
         } else {
             if(cnt != 0) {
                 output[index++] = input[i-1];
-                output[index++] = cnt + '0';
+                output[index++] = cnt + '0';        // TODO: have to be able to get more then 10 letters
             }
             now = input[i];
             cnt = 1;
