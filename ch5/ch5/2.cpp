@@ -20,6 +20,25 @@ string doubleToBinary(double d)
     }
 }
 
+// compare with 0.5, 0.25, ...
+string doubleToBinary2(double d)
+{
+    string ret = "0.";
+    double frac = 0.5;
+    while (d > 0) {
+        if (ret.length() > 32) {
+            return "ERROR";
+        }
+        if (d >= frac) {
+            ret.append("1");
+        } else {
+            ret.append("0");
+        }
+        frac /= 2;
+    }
+    return ret;
+}
+
 int main()
 {
     double in;

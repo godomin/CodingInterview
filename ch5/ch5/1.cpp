@@ -2,6 +2,7 @@
 #include <string>
 #include <math.h>
 using namespace std;
+// same as answer
 int insert(int n, int m, int i, int j)
 {
     int mask1 = (-1 << (j + 1)); // 11100000000

@@ -1,10 +1,6 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-int getbit(int n, int index)
-{
-    return n & (1 << index);
-}
 int setBit(int n, int index, int bit)
 {
     int mask = ~(1 << index);
@@ -21,17 +17,18 @@ int getNextLarge(int n)
             was1 = true;
             bit1Cnt++;
             n = setBit(n, idx, 0);
-        } else if(was1 && !(i&1)) {
+        } else if (was1 && !(i & 1)) {
             break;
         }
         idx++;
-        if(idx == 33)
+        if (idx == 33)
             return -1;
     }
-    n |= (1 << (bit1Cnt-1)) - 1;
+    n |= (1 << (bit1Cnt - 1)) - 1;
     n = setBit(n, idx, 1);
     return n;
 }
+// + Arithmetic Apporach
 int getNextSmall(int n)
 {
     return ~getNextLarge(~n);
